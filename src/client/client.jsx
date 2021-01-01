@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import Home from './pages/Home';
+import { loadableReady } from '@loadable/component';
 
-ReactDom.hydrate(<Home />, document.querySelector('#root'));
+loadableReady(() => {
+  ReactDom.hydrate(<Home />, document.querySelector('#root'));
+});

@@ -5,8 +5,6 @@ const webpackNodeExternals = require('webpack-node-externals');
 
 const serverConfig = {
   mode: 'development',
-  // inform webpack that we're building a bundle
-  // for nodeJS, rather than for the brouser
   target: 'node',
 
   entry: './src/server.js',

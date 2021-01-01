@@ -1,4 +1,4 @@
-const path = require('path');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 
 module.exports = {
   module: {
@@ -7,13 +7,11 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        options: {
-          presets: ['@babel/preset-env', '@babel/preset-react'],
-        },
       },
     ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
   },
+  plugins: [new LoadablePlugin({ filename: 'loadable-stats.json' })],
 };
